@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "sharedchestmod",
   "version": "${version}",
 
-  "name": "Example Mod",
+  "name": "Shared Chest Mod",
   "description": "This is an example description! Tell everyone what your mod is about!",
   "authors": [
-    "Me!"
+    "FelixSelin"
   ],
   "contact": {
     "homepage": "https://fabricmc.net/",
@@ -19,11 +19,14 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "org.felixselin.sharedchest.SharedChestMod"
+    ],
+    "client": [
+      "org.felixselin.sharedchest.SharedChestModClient"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "sharedchest.mixins.json"
   ],
 
   "depends": {
