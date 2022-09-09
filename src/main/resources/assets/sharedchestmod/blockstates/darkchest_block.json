@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "sharedchestmod:block/darkchest_block"
+    }
+  }
+}

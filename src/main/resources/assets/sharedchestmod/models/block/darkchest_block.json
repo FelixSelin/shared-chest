@@ -1,0 +1,7 @@
+{
+  "parent": "sharedchestmod:block/chest_template",
+  "textures": {
+    "0": "sharedchestmod:block/darkchest_block",
+    "particle": "minecraft:block/sculk"
+  }
+}
