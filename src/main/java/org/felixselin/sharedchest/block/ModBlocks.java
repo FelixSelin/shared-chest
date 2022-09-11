@@ -3,6 +3,8 @@ package org.felixselin.sharedchest.block;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
+import net.minecraft.block.ChestBlock;
+import net.minecraft.block.EnderChestBlock;
 import net.minecraft.block.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -14,7 +16,7 @@ import org.felixselin.sharedchest.SharedChestMod;
 public class ModBlocks {
 
     public static final Block DARK_CHEST = registerBlock("darkchest_block",
-            new Block(FabricBlockSettings.of(Material.METAL).strength(6f).requiresTool()), ItemGroup.MISC);
+            new DarkChestBlock(FabricBlockSettings.of(Material.METAL).strength(6f).requiresTool()), ItemGroup.MISC);
 
     private static Block registerBlock(String name, Block block, ItemGroup group) {
         registerBlockItem(name, block, group);
