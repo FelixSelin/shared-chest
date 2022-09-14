@@ -1,10 +1,11 @@
-package org.felixselin.sharedchest.block;
+package org.felixselin.sharedchest.registry;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import org.felixselin.sharedchest.SharedChestMod;
+import org.felixselin.sharedchest.block.DarkChestBlockEntity;
 
 public class ModBlockEntityType {
     public static final BlockEntityType<DarkChestBlockEntity> DARK_CHEST = FabricBlockEntityTypeBuilder.create(DarkChestBlockEntity::new, ModBlocks.DARK_CHEST).build(null);

@@ -1,4 +1,4 @@
-package org.felixselin.sharedchest.block;
+package org.felixselin.sharedchest.registry;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
@@ -12,6 +12,7 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import org.felixselin.sharedchest.SharedChestMod;
+import org.felixselin.sharedchest.block.DarkChestBlock;
 
 public class ModBlocks {
 
