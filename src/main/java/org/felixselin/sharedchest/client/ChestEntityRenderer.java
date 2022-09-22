@@ -32,7 +32,6 @@ public class ChestEntityRenderer<T extends BlockEntity> implements BlockEntityRe
 
     public ChestEntityRenderer(BlockEntityRendererFactory.Context context) {
 
-
         ModelPart modelPart = context.getLayerModelPart(EntityModelLayers.CHEST);
         this.chestLid = modelPart.getChild("lid");
         this.chestBottom = modelPart.getChild("bottom");

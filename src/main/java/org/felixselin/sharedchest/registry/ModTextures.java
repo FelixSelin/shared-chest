@@ -2,8 +2,6 @@ package org.felixselin.sharedchest.registry;
 
 import net.fabricmc.fabric.api.event.client.ClientSpriteRegistryCallback;
 import net.minecraft.client.render.TexturedRenderLayers;
-import net.minecraft.util.Identifier;
-import org.felixselin.sharedchest.SharedChestMod;
 import org.felixselin.sharedchest.block.DarkChestBlock;
 
 public class ModTextures {

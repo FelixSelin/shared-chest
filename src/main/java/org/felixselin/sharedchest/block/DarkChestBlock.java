@@ -47,7 +47,7 @@ public class DarkChestBlock
     protected static final VoxelShape SHAPE = Block.createCuboidShape(1.0, 0.0, 1.0, 15.0, 14.0, 15.0);
     private static final Text CONTAINER_NAME = Text.translatable("container.enderchest");
 
-    public static final Identifier texture = new Identifier(SharedChestMod.MOD_ID, "model/darkchest_block");
+    public static final Identifier texture = new Identifier(SharedChestMod.MOD_ID, "block/darkchest_block");
 
     public DarkChestBlock(AbstractBlock.Settings settings) {
         super(settings, () -> ModBlockEntityType.DARK_CHEST);
