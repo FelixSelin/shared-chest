@@ -41,12 +41,11 @@ public class ChestEntityRenderer<T extends BlockEntity> implements BlockEntityRe
     @Override
     public void render(T entity, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay) {
         World world = entity.getWorld();
-
-        BlockState blockState = world != null ? entity.getCachedState() : Blocks.CHEST.getDefaultState().with(ChestBlock.FACING, Direction.SOUTH);
+        BlockState blockState = world != null ? entity.getCachedState() : (BlockState) Blocks.CHEST.getDefaultState().with(ChestBlock.FACING, Direction.SOUTH);
         Block block = blockState.getBlock();
 
-        if (block instanceof DarkChestBlock) {
-            DarkChestBlock chest = (DarkChestBlock)block;
+        if (block instanceof AbstractChestBlock) {
+            AbstractChestBlock<?> abstractChestBlock = (AbstractChestBlock<?>) block;
 
             matrices.push();
             float rotation = blockState.get(ChestBlock.FACING).asRotation();
@@ -54,7 +53,6 @@ public class ChestEntityRenderer<T extends BlockEntity> implements BlockEntityRe
             matrices.multiply(Vec3f.POSITIVE_Y.getDegreesQuaternion(-rotation));
             matrices.translate(-0.5D, -0.5D, -0.5D);
 
-            AbstractChestBlock<?> abstractChestBlock = (AbstractChestBlock<?>) block;
 
             DoubleBlockProperties.PropertySource<? extends ChestBlockEntity> properties;
             if (world == null) {

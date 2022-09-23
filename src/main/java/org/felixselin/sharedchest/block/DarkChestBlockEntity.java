@@ -1,27 +1,22 @@
 package org.felixselin.sharedchest.block;
 
-/*
- * Decompiled with CFR 0.1.1 (FabricMC 57d88659).
- */
-
 import net.minecraft.block.BlockState;
-import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.block.entity.ChestLidAnimator;
-import net.minecraft.block.entity.LidOpenable;
-import net.minecraft.block.entity.ViewerCountManager;
+import net.minecraft.block.entity.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import org.felixselin.sharedchest.registry.ModBlockEntityType;
+import org.felixselin.sharedchest.registry.ModBlocks;
+
+import static org.felixselin.sharedchest.registry.ModBlockEntityType.DARK_CHEST;
 
 public class DarkChestBlockEntity
         extends BlockEntity
         implements LidOpenable {
     private final ChestLidAnimator lidAnimator = new ChestLidAnimator();
 
-    private static final DarkChestInventory darkChestInventory = new DarkChestInventory();
+    private static final DarkChestInventory inventory = new DarkChestInventory();
     private final ViewerCountManager stateManager = new ViewerCountManager(){
 
         @Override
@@ -36,6 +31,7 @@ public class DarkChestBlockEntity
 
         @Override
         protected void onViewerCountUpdate(World world, BlockPos pos, BlockState state, int oldViewerCount, int newViewerCount) {
+            world.addSyncedBlockEvent(DarkChestBlockEntity.this.pos, ModBlocks.DARK_CHEST, 1, newViewerCount);
         }
 
         @Override
@@ -45,7 +41,7 @@ public class DarkChestBlockEntity
     };
 
     public DarkChestBlockEntity(BlockPos pos, BlockState state) {
-        super(ModBlockEntityType.DARK_CHEST, pos, state);
+        super(DARK_CHEST, pos, state);
     }
 
     public static void clientTick(World world, BlockPos pos, BlockState state, DarkChestBlockEntity blockEntity) {
@@ -86,14 +82,13 @@ public class DarkChestBlockEntity
         }
     }
 
-    public static DarkChestInventory getDarkChestInventory() {
-        return darkChestInventory;
+    public static DarkChestInventory getDarkChestInventory(){
+        return inventory;
     }
 
     @Override
     public float getAnimationProgress(float tickDelta) {
         return this.lidAnimator.getProgress(tickDelta);
     }
-
 }
 

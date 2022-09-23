@@ -49,7 +49,7 @@ public class DarkChestBlock
 
     public static final Identifier texture = new Identifier(SharedChestMod.MOD_ID, "block/darkchest_block");
 
-    public DarkChestBlock(AbstractBlock.Settings settings) {
+    public DarkChestBlock(AbstractChestBlock.Settings settings) {
         super(settings, () -> ModBlockEntityType.DARK_CHEST);
         this.setDefaultState((BlockState)((BlockState)((BlockState)this.stateManager.getDefaultState()).with(FACING, Direction.NORTH)).with(WATERLOGGED, false));
     }
